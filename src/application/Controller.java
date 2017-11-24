@@ -3,7 +3,10 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +29,12 @@ public class Controller implements Initializable {
 	@FXML
 	private Label countLabel;
 	
+	@FXML
+	private JFXButton btnAtras;
+	
+	@FXML
+	private JFXButton btnAdelante;
+	
 
 
 	public void translateAnimation(double duration, Node node, double byX) {
@@ -40,6 +49,7 @@ public class Controller implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		translateAnimation(0.5, pane2, 600);
 		translateAnimation(0.5, pane3, 600);
+		btnAtras.setVisible(false);
 	}
 
 	int showSlide = 0;
@@ -48,15 +58,16 @@ public class Controller implements Initializable {
 	void nextAction(ActionEvent event) {
 
 		if (showSlide == 0) {
+			btnAtras.setVisible(true);
 			translateAnimation(0.5, pane2, -600);
 			showSlide++; // showSlide=1
 			countLabel.setText("2/3");
 		} else if (showSlide == 1) {
-
+			
 			translateAnimation(0.5, pane3, -600);
 			showSlide++; // showSlide=2
 			countLabel.setText("3/3");
-
+			btnAdelante.setVisible(false);
 		} else {
 			System.out.println("No more slides");
 		}
@@ -72,12 +83,20 @@ public class Controller implements Initializable {
 			translateAnimation(0.5, pane2, 600);
 			showSlide--; // showSlide=0
 			countLabel.setText("1/3");
+			btnAdelante.setVisible(true);
+			btnAtras.setVisible(false);
 		} else if (showSlide == 2) {
 			translateAnimation(0.5, pane3, 600);
 			showSlide--; // showSlide=1
 			countLabel.setText("2/3");
+			btnAdelante.setVisible(true);
 		}
 
+	}
+	
+	@FXML
+	private void handleClose() {
+			Platform.exit();
 	}
 
 }
