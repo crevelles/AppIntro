@@ -21,7 +21,7 @@
                <font>
                   <Font name="Arial" size="13.0" />
                </font></Label>
-            <Label alignment="CENTER" layoutX="45.0" layoutY="204.0" prefHeight="250.0" prefWidth="408.0" style="-fx-background-color: #fff; -fx-border-color: #00000020; -fx-border-width: 5px;" textFill="#969696">
+            <Label alignment="CENTER" layoutX="91.0" layoutY="204.0" prefHeight="250.0" prefWidth="316.0" style="-fx-background-color: #fff; -fx-border-color: #00000020; -fx-border-width: 5px;" textFill="#969696">
                <font>
                   <Font size="21.0" />
                </font>
@@ -49,7 +49,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="pane2" layoutX="143.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" styleClass="anchor" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="pane2" layoutX="143.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" styleClass="anchor" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" layoutX="47.0" layoutY="77.0" prefHeight="40.0" prefWidth="385.0" styleClass="label1" stylesheets="@application.css" text="vControl App" textFill="WHITE">
                <font>
