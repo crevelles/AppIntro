@@ -25,6 +25,12 @@ public class Controller implements Initializable {
 
 	@FXML
 	private AnchorPane pane3;
+	
+	@FXML
+	private AnchorPane pane4;
+	
+	@FXML
+	private AnchorPane pane5;
 
 	@FXML
 	private Label countLabel;
@@ -49,7 +55,9 @@ public class Controller implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		translateAnimation(0.5, pane2, 600);
 		translateAnimation(0.5, pane3, 600);
-		btnAtras.setVisible(false);
+		translateAnimation(0.5, pane4, 600);
+		translateAnimation(0.5, pane5, 600);
+		
 	}
 
 	int showSlide = 0;
@@ -58,20 +66,24 @@ public class Controller implements Initializable {
 	void nextAction(ActionEvent event) {
 
 		if (showSlide == 0) {
-			btnAtras.setVisible(true);
 			translateAnimation(0.5, pane2, -600);
 			showSlide++; // showSlide=1
-			countLabel.setText("2/3");
+			countLabel.setText("2/5");
 		} else if (showSlide == 1) {
-			
 			translateAnimation(0.5, pane3, -600);
 			showSlide++; // showSlide=2
-			countLabel.setText("3/3");
-			btnAdelante.setVisible(false);
-		} else {
-			System.out.println("No more slides");
-		}
-
+			countLabel.setText("3/5");
+			
+		} else if (showSlide == 2) {
+			translateAnimation(0.5, pane4, -600);
+			showSlide++; // showSlide=3
+			countLabel.setText("4/5");
+			
+		} else if (showSlide == 3) {
+			translateAnimation(0.5, pane5, -600);
+			showSlide++; // showSlide=4
+			countLabel.setText("5/5");
+		} 
 	}
 
 	@FXML
@@ -82,14 +94,19 @@ public class Controller implements Initializable {
 		} else if (showSlide == 1) {
 			translateAnimation(0.5, pane2, 600);
 			showSlide--; // showSlide=0
-			countLabel.setText("1/3");
-			btnAdelante.setVisible(true);
-			btnAtras.setVisible(false);
+			countLabel.setText("1/5");
 		} else if (showSlide == 2) {
 			translateAnimation(0.5, pane3, 600);
 			showSlide--; // showSlide=1
-			countLabel.setText("2/3");
-			btnAdelante.setVisible(true);
+			countLabel.setText("2/5");
+		}  else if (showSlide == 3) {
+			translateAnimation(0.5, pane4, 600);
+			showSlide--; // showSlide=1
+			countLabel.setText("3/5");
+		} else if (showSlide == 4) {
+			translateAnimation(0.5, pane5, 600);
+			showSlide--; // showSlide=1
+			countLabel.setText("4/5");
 		}
 
 	}
