@@ -15,42 +15,70 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+
+// TODO: Auto-generated Javadoc
+/**
+ *  Clase controlador, esta clase implementa los métodos necesarios
+ * para aplicar la lógica.
+ *
+ * @author Cristobal Revelles
+ */
 public class Controller implements Initializable {
 
+	/** The pane 1. */
 	@FXML
 	private AnchorPane pane1;
 
+	/** The pane 2. */
 	@FXML
 	private AnchorPane pane2;
 
+	/** The pane 3. */
 	@FXML
 	private AnchorPane pane3;
 	
+	/** The pane 4. */
 	@FXML
 	private AnchorPane pane4;
 	
+	/** The pane 5. */
 	@FXML
 	private AnchorPane pane5;
 
+	/** The count label. */
 	@FXML
 	private Label countLabel;
 	
+	/** The btn atras. */
 	@FXML
 	private JFXButton btnAtras;
 	
+	/** The btn adelante. */
 	@FXML
 	private JFXButton btnAdelante;
 	
+	/** The show slide. */
+	int showSlide = 0;
 
 
+	/**
+	 * Translate animation.
+	 *
+	 * @param duration  - Duración que tarda en pasar de una ventana a otro
+	 * @param node the node
+	 * @param byX  - Coordenadas donde se posiciona
+	 */
 	public void translateAnimation(double duration, Node node, double byX) {
-
 		TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(duration), node);
 		translateTransition.setByX(byX);
 		translateTransition.play();
 
 	}
 
+	
+	/* (non-Javadoc)
+	 * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		translateAnimation(0.5, pane2, 600);
@@ -61,14 +89,13 @@ public class Controller implements Initializable {
 		
 	}
 
-	int showSlide = 0;
+	
 
 	
 	/**
-	 * Este método recibe el evento del click. Al pulsar
-	 * nos llevará a la siguiente ventana
-	 * @param event 
-	 * 
+	 * metodo para pasar a la siguiente ventana.
+	 *
+	 * @param event -  recibe el evento que es el click
 	 */
 	@FXML
 	void nextAction(ActionEvent event) {
@@ -92,10 +119,11 @@ public class Controller implements Initializable {
 		} 
 	}
 
+	
 	/**
-	 * @param event
-	 * * El método backAction sirve para avanzar en la APP
-	 * Recibe un parámetro que será el evento del click
+	 * Back action - Vuelve atrás
+	 *
+	 * @param event the event
 	 */
 	@FXML
 	void backAction(ActionEvent event) {
@@ -121,10 +149,12 @@ public class Controller implements Initializable {
 		}
 
 	}
-	@FXML
+	
 	/**
-	 * Método cierra la APP
+	 * Handle close --> cierra la APP
 	 */
+	@FXML
+
 	private void handleClose() {
 			Platform.exit();
 	}

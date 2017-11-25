@@ -10,17 +10,24 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * Clase principal que arranca la APP.
+ *
  * @author cristobal
  * @version 1.1
- * @since Diciembre 2017
  * @see Controller
+ * @since Diciembre 2017
  */
 
 public class Main extends Application {
+	
+	/** The stage. */
 	Stage stage;
 	
+	/* (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -32,10 +39,18 @@ public class Main extends Application {
 		}
 	}
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
+	/**
+	 * Main window.
+	 */
 	public void mainWindow() {
 		try {
 
