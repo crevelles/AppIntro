@@ -10,6 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
+/**
+ * 
+ * @author cristobal
+ * @version 1.1
+ * @since Diciembre 2017
+ * @see Controller
+ */
 
 public class Main extends Application {
 	Stage stage;

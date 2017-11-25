@@ -57,11 +57,19 @@ public class Controller implements Initializable {
 		translateAnimation(0.5, pane3, 600);
 		translateAnimation(0.5, pane4, 600);
 		translateAnimation(0.5, pane5, 600);
+		btnAtras.setVisible(false);
 		
 	}
 
 	int showSlide = 0;
 
+	
+	/**
+	 * Este método recibe el evento del click. Al pulsar
+	 * nos llevará a la siguiente ventana
+	 * @param event 
+	 * 
+	 */
 	@FXML
 	void nextAction(ActionEvent event) {
 
@@ -73,12 +81,10 @@ public class Controller implements Initializable {
 			translateAnimation(0.5, pane3, -600);
 			showSlide++; // showSlide=2
 			countLabel.setText("3/5");
-			
 		} else if (showSlide == 2) {
 			translateAnimation(0.5, pane4, -600);
 			showSlide++; // showSlide=3
 			countLabel.setText("4/5");
-			
 		} else if (showSlide == 3) {
 			translateAnimation(0.5, pane5, -600);
 			showSlide++; // showSlide=4
@@ -86,6 +92,11 @@ public class Controller implements Initializable {
 		} 
 	}
 
+	/**
+	 * @param event
+	 * * El método backAction sirve para avanzar en la APP
+	 * Recibe un parámetro que será el evento del click
+	 */
 	@FXML
 	void backAction(ActionEvent event) {
 
@@ -110,8 +121,10 @@ public class Controller implements Initializable {
 		}
 
 	}
-	
 	@FXML
+	/**
+	 * Método cierra la APP
+	 */
 	private void handleClose() {
 			Platform.exit();
 	}
